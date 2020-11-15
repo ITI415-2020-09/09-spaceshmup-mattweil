@@ -95,6 +95,7 @@ public class Enemy : MonoBehaviour {
                         Main.S.ShipDestroyed(this);
                     }
                     notifiedOfDestruction = true;
+                    
                     // Destroy this enemy
                     Destroy(this.gameObject);
                 }
@@ -102,6 +103,7 @@ public class Enemy : MonoBehaviour {
                 break;
 
             default:
+            
                 print("Enemy hit by non-ProjectileHero: " + otherGO.name);
                 break;
         }

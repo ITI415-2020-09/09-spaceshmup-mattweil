@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
 
 public class Hero : MonoBehaviour {
     static public Hero S; // Singleton
 
     [Header("Set in Inspector")]
     // These fields control the movement of the ship
+    public Text livesText;
+	public Text scoreText;
     public float speed = 30;
+    public int lives = 3;
+    public int score = 0;
     public float rollMult = -45;
     public float pitchMult = 30;
     public float gameRestartDelay = 2f;
@@ -41,7 +47,7 @@ public class Hero : MonoBehaviour {
 
         // Reset the weapons to start _Hero with 1 blaster
         ClearWeapons();
-        weapons[0].SetType(WeaponType.blaster);
+        weapons[0].SetType(WeaponType.spread);
     }
 	
 	// Update is called once per frame
@@ -84,6 +90,7 @@ public class Hero : MonoBehaviour {
 
         if(go.tag == "Enemy")
         {
+
             shieldLevel--;
             Destroy(go);
         }
@@ -140,9 +147,14 @@ public class Hero : MonoBehaviour {
             // If the shield is going to be set to less than zero
             if (value < 0)
             {
-                Destroy(this.gameObject);
-                // Tell Main.S to restart the game after a delay
-                Main.S.DelayedRestart(gameRestartDelay);
+                if(lives > 0){
+                    lives = lives - 1;
+                    livesText.text = "Lives remaining: " + lives.ToString();
+                } else {
+                    Destroy(this.gameObject);
+                    // Tell Main.S to restart the game after a delay
+                    Main.S.DelayedRestart(gameRestartDelay);
+                }
             }
         }
     }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
+using UnityEngine.UI;
 
 public class Main : MonoBehaviour {
 
@@ -14,15 +16,39 @@ public class Main : MonoBehaviour {
     public float enemyDefaultPadding = 1.5f; // Padding for position
     public WeaponDefinition[] weaponDefinitions;
     public GameObject prefabPowerUp;
+    public Text scoreText;
     public WeaponType[] powerUpFrequency = new WeaponType[]
     {
         WeaponType.blaster, WeaponType.blaster, WeaponType.spread, WeaponType.shield
     };
 
     private BoundsCheck bndCheck;
+    private int currentScore = 0;
 
     public void ShipDestroyed( Enemy e)
     {
+
+        var prefabGameObject = PrefabUtility.GetCorrespondingObjectFromSource(e);
+        print(e.name);
+        if(e.name == "Enemy_0(Clone)"){
+            currentScore = currentScore + 5;
+            scoreText.text = "Score: " + currentScore.ToString();
+        } else if(e.name == "Enemy_1(Clone)"){
+            currentScore = currentScore + 10;
+            scoreText.text = "Score: " + currentScore.ToString();
+        } 
+        else if(e.name == "Enemy_2(Clone)"){
+            currentScore = currentScore + 15;
+            scoreText.text = "Score: " + currentScore.ToString();
+        }
+        else if(e.name == "Enemy_3(Clone)"){
+            currentScore = currentScore + 20;
+            scoreText.text = "Score: " + currentScore.ToString();
+        }
+        else if(e.name == "Enemy_4(Clone)"){
+            currentScore = currentScore + 25;
+            scoreText.text = "Score: " + currentScore.ToString();
+        }
         // Potentially generate a PowerUp
         if (Random.value <= e.powerUpDropChance)
         {
