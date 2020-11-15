@@ -11,6 +11,8 @@ public class Hero : MonoBehaviour {
     // These fields control the movement of the ship
     public Text livesText;
 	public Text scoreText;
+    public Text endText;
+    public Text endTextScore;
     public float speed = 30;
     public int lives = 3;
     public int score = 0;
@@ -152,6 +154,8 @@ public class Hero : MonoBehaviour {
                     livesText.text = "Lives remaining: " + lives.ToString();
                 } else {
                     Destroy(this.gameObject);
+                    endText.text = "GAME OVER";
+                    endTextScore.text = "Your " + scoreText.text.ToLower();
                     // Tell Main.S to restart the game after a delay
                     Main.S.DelayedRestart(gameRestartDelay);
                 }
