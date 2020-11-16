@@ -20,7 +20,7 @@ public class Hero : MonoBehaviour {
     public float pitchMult = 30;
     public float gameRestartDelay = 2f;
     public GameObject projectilePrefab;
-    public float projectileSpeed = 40;
+    public float projectileSpeed = 60;
     public Weapon[] weapons;
 
     [Header("Set Dynamically")]

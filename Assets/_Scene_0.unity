@@ -1141,7 +1141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 4.706, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 101, y: 221}
+  m_AnchoredPosition: {x: 42, y: 221}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184487100
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   scoreText: {fileID: 1885068963}
   endText: {fileID: 1184487100}
   endTextScore: {fileID: 1590135911}
-  speed: 60
+  speed: 90
   lives: 3
   score: 0
   rollMult: -45
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   gameRestartDelay: 8
   projectilePrefab: {fileID: 1899541879965282, guid: 59a4640edad59f94a87c1d235355cb6a,
     type: 3}
-  projectileSpeed: 40
+  projectileSpeed: 80
   weapons:
   - {fileID: 1374778674}
   - {fileID: 2031523527}
@@ -1529,8 +1529,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 4.706, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53, y: 179}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 50, y: 179}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590135911
 MonoBehaviour:
