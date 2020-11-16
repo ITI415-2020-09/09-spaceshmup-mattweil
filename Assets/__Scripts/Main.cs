@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 using UnityEngine.UI;
 
 public class Main : MonoBehaviour {
@@ -28,7 +27,6 @@ public class Main : MonoBehaviour {
     public void ShipDestroyed( Enemy e)
     {
 
-        var prefabGameObject = PrefabUtility.GetCorrespondingObjectFromSource(e);
         print(e.name);
         if(e.name == "Enemy_0(Clone)"){
             currentScore = currentScore + 5;
